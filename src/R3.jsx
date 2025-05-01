@@ -4,11 +4,11 @@ import { setFuel } from './store/carSlice.js';
 import { setList } from './store/checklistSlice.js'; 
 export default function R3({ onSelect }) {
     const [obj, setObj] = useState([
-        { name: '가솔린', value:'gasoline', img: '/gasoline.PNG', select: false },
-        { name: '디젤',value:'diesel', img: '/diesel.PNG', select: false },
-        { name: 'LPG', value:'lpg',img: '/lpg.PNG', select: false },
-        { name: 'EV', value:'ev', img: '/ev.PNG', select: false },
-        { name: '하이브리드',value:'hybrid', img: '/hybrid.PNG', select: false },
+        { name: '가솔린', value:'gasoline', img: '/fuels/gasoline.PNG', select: false },
+        { name: '디젤',value:'diesel', img: '/fuels/diesel.PNG', select: false },
+        { name: 'LPG', value:'lpg',img: '/fuels/lpg.PNG', select: false },
+        { name: '전기', value:'electric', img: '/fuels/electric.PNG', select: false },
+        { name: '하이브리드',value:'hybrid', img: '/fuels/hybrid.PNG', select: false },
     ]);
     const fuels = useSelector((state) => state.mycar.fuellist);
     const dispatch = useDispatch();

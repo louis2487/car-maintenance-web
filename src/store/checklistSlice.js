@@ -65,7 +65,7 @@ const checklistSlice = createSlice({
       state.list = items.map(name => (
         { name, lastkm: null, lasttime: null, replacekm: replacekmMap[name], replacetime: replacetimeMap[name], remainkm: null, remaintime: null, signal: 'unknown' }));
       state.R6list = items.map(name => (
-        { name, input1: 'null', input2: 'null', in1: false, in2: false }));
+        { name, input1: 'null', input2: 'null', in1: false, in2: false, checked:false }));
       state.R7list = items.map(name => (
         { name, signal: null, signaltext: null, foreseekm: null, foreseetime: null }));
     },
@@ -145,5 +145,5 @@ function plusmonth(remain, now){
 
 
 
-export const { setList, setInput, setOperation,setOutput } = checklistSlice.actions;
+export const { setList, setInput, setOperation,setOutput,setChecked} = checklistSlice.actions;
 export default checklistSlice.reducer;

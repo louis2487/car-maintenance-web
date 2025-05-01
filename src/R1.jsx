@@ -1,14 +1,27 @@
 import { useState } from 'react';
 import './App.css'
 import { useDispatch } from 'react-redux'
-import { setBrend } from './store/carSlice.js'; 
+import { setBrend } from './store/carSlice.js';
 
 export default function R1({ onSelect }) {
   
   const [manufacturers, setManufactures] = useState([
-    { name: 'Hyundai', img: '/hyundai.PNG', select: false },
-    { name: 'Kia', img: '/kia.PNG', select: false },
+    { name: 'Hyundai', img: '/brands/Hyundai.PNG', select: false },
+    { name: 'Kia', img: '/brands/Kia.PNG', select: false },
+  { name: 'Genesis', img: '/brands/Genesis.PNG', select: false },
+  { name: 'Re', img: '/brands/Re.PNG', select: false },
+  { name: 'Toyota', img: '/brands/Toyota.PNG', select: false },
+  { name: 'Honda', img: '/brands/Honda.PNG', select: false },
+  { name: 'Nissan', img: '/brands/Nissan.PNG', select: false },
+  { name: 'Lexus', img: '/brands/Lexus.PNG', select: false },
+  { name: 'BMW', img: '/brands/BMW.png', select: false },
+  { name: 'Benz', img: '/brands/Benz.png', select: false },
+  { name: 'Audi', img: '/brands/Audi.png', select: false },
+  { name: 'Volkswagen', img: '/brands/Volkswagen.png', select: false },
+  { name: 'Chevrolet', img: '/brands/Chevrolet.png', select: false },
+  { name: 'Ford', img: '/brands/Ford.png', select: false },
   ]);
+  
 
   
   const dispatch = useDispatch();

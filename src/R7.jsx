@@ -29,7 +29,7 @@ export default function R7() {
                     <div className="unit">
                         <LightItem signal={list.signal} name ={list.name}/>
                         <div className="input-pair">
-                            <Outbox label="교환 여부" value={list.signaltext} signal= {list.signal}/>
+                            <Outbox label="점검 여부" value={list.signaltext} signal= {list.signal}/>
                             <Outbox label="예상 교체거리" value={list.foreseekm} />
                             <Outbox label="예상 교체시점" value={list.foreseetime} />
                         </div>

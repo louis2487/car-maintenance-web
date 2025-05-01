@@ -1,12 +1,17 @@
-# React + Vite
+# 소개
+React, Redux, React-Router-Dom을 사용하여 만든 차량 소모품 관리 웹입니다.  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 기술 스택
+- React
+- Redux
+- React Router DOM
+- Firebase Hosting
 
-Currently, two official plugins are available:
+## 주요 기능
+ 1. 차량 등록 (제조사/차종/유종/연식/주행거리 입력)
+ 2. 소모품 체크리스트 표시
+ 3. 소모품 상태 신호등 시스템
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 배포
+Firebase 사용
+Web : [https://car-maintenance-6fe8a.web.app]

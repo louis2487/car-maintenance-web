@@ -21,7 +21,7 @@ export default function R5({ mileage, onChange }) {
   );
   return (
     <div>
-      <h1 className="text-position">주행거리를 입력해주세요</h1>
+      <h1 className="text-position">누적 주행거리를 입력해주세요</h1>
       {box}
     </div>
   );
