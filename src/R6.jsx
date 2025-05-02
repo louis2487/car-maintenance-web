@@ -23,6 +23,7 @@ function Inbox({ label, placeholder, handler, index, type }) {
         onKeyDown={(e) => {
           if (e.key == 'Enter') { handler(e.target.value, index) }
         }}
+        onBlur={(e)=>{handler(e.target.value, index)}}
         className="input-box"
         min="0"
         placeholder={placeholder} />

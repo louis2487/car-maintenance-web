@@ -101,6 +101,7 @@ img {
   display: flex;
   align-items: center;
   margin-top: 50px;
+  margin-left: 100px;
   gap:20px;
 }
 
@@ -148,6 +149,13 @@ img {
   margin-top: 30px;
   margin-left : 30px;
 }
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-left : 120px;
+}
 
 .mileage-label {
   font-size: 1.2rem;
@@ -164,6 +172,16 @@ img {
   width: 300px;       
   height: 120px;             
   font-size: 1.5rem;      
+  padding: 10px 15px;      
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  text-align: center;       
+  margin-top: 10px;
+}
+.input5 {
+  width: 300px;       
+  height: 120px;             
+  font-size: 2.5rem;      
   padding: 10px 15px;      
   border: 2px solid #ccc;
   border-radius: 12px;
@@ -232,6 +250,11 @@ img {
   font-weight: 500;
   color :  black;
 }
+.black-label2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color :  black;
+}
 .line{
   border-bottom: 3px solid rgb(196, 195, 195);  
   background-color: transparent;
@@ -245,6 +268,14 @@ img {
   margin-top : 20px;
   margin-left : 20px;
   transform: translateY(20px);
+}
+.wrap5{
+  display: absolute;
+  flex-direction: column;
+  align-items: center;
+  margin-top : 20px;
+  margin-left : 120px;
+  transform: translateX(100px);
 }
 .scroll {
   max-height: 70vh;
@@ -262,7 +293,6 @@ img {
   border-radius: 9999px;
   border: 1px solid #ccc;
 }
-
 .light-red {
   background-color: #f87171;
 }

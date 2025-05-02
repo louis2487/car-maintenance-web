@@ -97,7 +97,7 @@ const checklistSlice = createSlice({
         if (state.list[index].remainkm <= 0 || state.list[index].remaintime <= 0) {
           state.list[index].signal = 'red';
         }
-        else if (state.list[index].remainkm <= state.list[index].replacekm * 0.2 || state.list[index].remaintime <= state.list[index].replacetime * 0.2) {
+        else if (state.list[index].remainkm <= state.list[index].replacekm * 0.33 || state.list[index].remaintime <= state.list[index].replacetime * 0.33) {
           state.list[index].signal = 'yellow';
         }
         else {

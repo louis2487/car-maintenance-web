@@ -12,6 +12,8 @@ import R2L from './R2L';
 import R2B from './R2B';
 import R2A from './R2A';
 import R2Ben from './R2Ben';
+import R2C from './R2C';
+import R2F from './R2F';
 import R2V from './R2V';
 import R3 from './R3';
 import R4 from './R4';
@@ -37,6 +39,8 @@ function Router() {
                 <Route path="/BMW" element={<R2B />} />
                 <Route path="/Audi" element={<R2A />} />
                 <Route path="/Benz" element={<R2Ben />} />
+                <Route path="/Chevrolet" element={<R2C />} />
+                <Route path="/Ford" element={<R2F />} />
                 <Route path="/Volkswagen" element={<R2V />} />
                 <Route path="/fuel" element={<R3/>} />
                 <Route path="/year" element={<R4/>} />

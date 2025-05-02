@@ -119,7 +119,6 @@ const FuelMap = {
   '스파크': ['gasoline'],
   '말리부': ['gasoline'],
   '트랙스': ['gasoline'],
-  '이쿼녹스': ['gasoline'],
   '볼트 EV': ['electric'],
 
   /* 포드 */
