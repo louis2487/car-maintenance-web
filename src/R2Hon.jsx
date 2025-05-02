@@ -22,7 +22,7 @@ export default function R2Hon({ onSelect }) {
     return (
         <div>
             <h1 className="text-position">차종을 선택해주세요</h1>
-            <div className="car-list">
+            <div className="car-list2">
             {manufacturers.map((m) => (
                 <div key ={m.name} className={m.select ? 'car-container-select' : 'car-container-default'}>
                 <img

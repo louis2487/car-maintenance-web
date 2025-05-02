@@ -90,12 +90,24 @@ img {
   color: #333; 
 }
 .car-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   flex-direction: row;
   flex-wrap: wrap; 
   justify-content: flex-start; 
   gap: 20px; 
   margin-top: 150px; 
+  margin-left: 50px; 
+}
+.car-list2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  gap: 20px; 
+  margin-top: 250px; 
+  margin-left: 50px; 
 }
 .year-input-container {
   display: flex;
