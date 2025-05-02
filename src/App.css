@@ -83,6 +83,16 @@ img {
   border: 3px solid rgb(139, 83, 83); 
   background-color: red; 
 }
+.fuel-noselect {
+  text-align: center; /* 텍스트를 이미지 아래로 중앙 정렬 */
+  display: flex;
+  flex-direction: column; /* 수직으로 배치 */
+  align-items: center; /* 수평 중앙 정렬 */
+  border: 3px solid black;
+  background-color: yellowgreen;
+  filter: grayscale(60%);
+  pointer-events: none; 
+}
 .car-name {
   font-size: 16px; 
   font-weight: bold;
@@ -109,6 +119,17 @@ img {
   margin-top: 250px; 
   margin-left: 50px; 
 }
+.fuel-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  gap: 40px; 
+  margin-top: 150px; 
+  margin-left: 100px; 
+}
+
 .year-input-container {
   display: flex;
   align-items: center;

@@ -23,7 +23,7 @@ function Inbox({value, hendler1, hendler2, hendler3}){
         onChange={hendler2}
         onBlur = {hendler3}
         min="0"
-        placeholder="예: 45000"
+        placeholder="예: 450000"
       />
     </div>
   )
