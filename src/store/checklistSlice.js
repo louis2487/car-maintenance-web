@@ -8,7 +8,7 @@ const listMap = {
   'diesel': ["디젤 연료필터", "DPF 필터", "예열 플러그", ...NonEVItem, ...AllItem],
   'lpg': ["하이브리드 배터리 점검", ...NonEVItem, ...AllItem],
   'hybrid': ["하이브리드 배터리 점검", ...NonEVItem, ...AllItem],
-  'ev': ["감속기 오일", ...AllItem],
+  'electric': ["감속기 오일", ...AllItem],
 }
 const replacekmMap = {
   '엔진오일': ["10000"],

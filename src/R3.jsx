@@ -13,7 +13,6 @@ export default function R3() {
         { name: '전기', value: 'electric', img: '/fuels/electric.PNG', select: false, isuse: false },
 
     ]);
-
     const IsuseUpdate = () => {
         const updated = obj.map(item => ({
             ...item, isuse: fuels.includes(item.value)
@@ -23,11 +22,9 @@ export default function R3() {
     useState(() => {
         IsuseUpdate();
     }, [fuels]);
-
     const imgClick = (a) => {
         const objs = obj.map((m) =>
-            m.name === a.name ? { ...m, select: !m.select } : { ...m, select: false }
-        )
+            m.name === a.name ? { ...m, select: !m.select } : { ...m, select: false })
         setObj(objs);
         dispatch(setFuel(a.value));
         dispatch(setList(a.value));
@@ -37,16 +34,16 @@ export default function R3() {
             <h1 className="text-position">유종을 선택해주세요</h1>
             <div className="fuel-list">
                 {obj.map((m) => (
-                        <div key={m.name} className={ m.select ? 'car-container-select' : m.isuse? 'car-container-default':'fuel-noselect' }>
-                            <img
-                                key={m.name}
-                                src={m.img}
-                                alt={m.name}
-                                onClick={() => imgClick(m)}
-                            />
-                            <p className="car-name">{m.name}</p>
-                        </div>
-                    ))}
+                    <div key={m.name} className={m.select ? 'car-container-select' : m.isuse ? 'car-container-default' : 'fuel-noselect'}>
+                        <img
+                            key={m.name}
+                            src={m.img}
+                            alt={m.name}
+                            onClick={() => imgClick(m)}
+                        />
+                        <p className="car-name">{m.name}</p>
+                    </div>
+                ))}
             </div>
         </div>
     );

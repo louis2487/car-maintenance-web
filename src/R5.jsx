@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import { setMileage } from './store/carSlice.js';
-
-
 function Outbox({value, hendler }) {
   return (
     <div className='wrap5' onClick={hendler}>
