@@ -34,37 +34,37 @@
 
 - **Step 0. 제조사 선택**
     
-    ![제조사2.PNG](./README-asset/제조사2.PNG)
+    ![제조사2.PNG](./README-asset/제조사2.png)
     
 
 - **Step 1. 차종 선택**
     
-    ![차종.PNG](./README-asset/차종.PNG)
+    ![차종.PNG](./README-asset/차종.png)
     
 
 - **Step 2. 유종 선택**
     
-    ![유종.PNG](./README-asset/유종.PNG)
+    ![유종.PNG](./README-asset/유종.png)
     
 
 - **Step 3. 연식 선택**
     
-    ![연식.PNG](./README-asset/연식.PNG)
+    ![연식.PNG](./README-asset/연식.png)
     
 
 - **Step 4. 누적 주행거리 입력**
     
-    ![주행거리.PNG](./README-asset/주행거리.PNG)
+    ![주행거리.PNG](./README-asset/주행거리.png)
     
 
 - **Step 5. 체크리스트 작성**
     
-    ![체크3.PNG](./README-asset/체크3.PNG)
+    ![체크3.PNG](./README-asset/체크3.png)
     
 
 - **Step 6. 결과 확인**
     
-    ![결과1.PNG](./README-asset/결과1.PNG)
+    ![결과1.PNG](./README-asset/결과1.png)
 
 
 
