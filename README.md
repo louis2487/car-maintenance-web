@@ -4,11 +4,13 @@
 
 **프로젝트명**: 차량 소모품 관리 웹서비스
 
+**배포**: [**https://car-maintenance-6fe8a.web.app/**](https://car-maintenance-6fe8a.web.app/)
+
 **기간**: 2025.03 – 현재(배포 후 TypeScript, Tailwind CSS 등 프로젝트 실무화 진행중)
 
 **개발자**: 조홍래 **(Frontend)**(1인 총괄)
 
-**GitHub: https://github.com/louis2487**
+**깃허브: [https://github.com/louis2487](https://github.com/louis2487/car-maintenance-web/blob/master/src)**
 
 
 
