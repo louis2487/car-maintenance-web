@@ -24,7 +24,7 @@
 
 **사용 기술**
 
-- **Frontend**: React, Redux Toolkit, CSS, React Router Dom
+- **Frontend**: React, TypeScript, Redux Toolkit, CSS, React Router Dom
 - **State Management**: Redux Slice
 - **Deployment**: Firebase Hosting
 
