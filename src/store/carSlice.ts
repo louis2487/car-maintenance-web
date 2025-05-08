@@ -1,10 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+type FuelType = 'gasoline' | 'diesel' | 'hybrid' | 'electric' | 'LPG' | 'hydrogen';
 
-const FuelMap = {
+interface CarState {
+  step: number;
+  fuellist: FuelType[];
+  brend: string | null;
+  model: string | null;
+  fuel: FuelType | null;
+  year: number;
+  mileage: number;
+}
+
+const FuelMap: Record<string, FuelType[]> = {
   /*기아*/
   '모닝': ['gasoline'],
-  '레이': ['gasoline', 'lpg'],
+  '레이': ['gasoline', 'LPG'],
   'K3': ['gasoline', 'diesel'],
   'K5': ['gasoline', 'hybrid'],
   'K8': ['gasoline', 'hybrid'],
@@ -43,7 +54,6 @@ const FuelMap = {
   'GV60': ['electric'],
   'GV70': ['gasoline', 'diesel', 'electric'],
   'GV80': ['gasoline', 'diesel'],
-
 
   /* 르노코리아 */
   'sm3': ['gasoline', 'electric'],
@@ -128,15 +138,11 @@ const FuelMap = {
   '브롱코': ['gasoline'],
   '머스탱': ['gasoline', 'electric'],
   '머스탱 마하-E': ['electric'],
-
-
-
-
-}
+};
 
 const carSlice = createSlice({
   name: 'car',
-  initialState: {
+  initialState: <CarState>{
     step: 0,
     fuellist: [],
     brend: null,
@@ -146,28 +152,27 @@ const carSlice = createSlice({
     mileage: 0,
   },
   reducers: {
-    setStep: (state, action) => {
+    setStep: (state, action: PayloadAction<number>) => {
       state.step = action.payload;
     },
-    setBrend: (state, action) => {
+    setBrend: (state, action: PayloadAction<string | null>) => {
       state.brend = action.payload;
     },
-    setModel: (state, action) => {
+    setModel: (state, action: PayloadAction<string | null>) => {
       state.model = action.payload;
-      state.fuellist = FuelMap[action.payload] || [];
+      state.fuellist = FuelMap[action.payload || ''] || [];
       state.fuel = null;
     },
-    setFuel: (state, action) => {
+    setFuel: (state, action: PayloadAction<FuelType | null>) => {
       state.fuel = action.payload;
     },
-    setYear: (state, action) => {
+    setYear: (state, action: PayloadAction<number>) => {
       state.year = action.payload;
     },
-    setMileage: (state, action) => {
+    setMileage: (state, action: PayloadAction<number>) => {
       state.mileage = action.payload;
     },
-
-  }
+  },
 });
 
 export const { setStep, setBrend, setModel, setFuel, setYear, setMileage } = carSlice.actions;
