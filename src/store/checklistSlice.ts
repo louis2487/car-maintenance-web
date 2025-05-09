@@ -27,7 +27,7 @@ interface R6Item {
   checked: boolean;
 }
 
-interface R7Item {
+export interface R7Item {
   name: string;
   signal: string | null;
   signaltext: string | null;
@@ -97,7 +97,7 @@ const checklistSlice = createSlice({
     list: [],
     R6list: [],
     R7list: [],
-    nowtime: "25-04",
+    nowtime: "25-05",
   } as ChecklistState,
   reducers: {
     setList: (state, action: PayloadAction<string>) => {
@@ -146,38 +146,40 @@ const checklistSlice = createSlice({
     setOperation: (state, action: PayloadAction<{ currentkm: number, caryear: string }>) => {
       const { currentkm, caryear } = action.payload;
       state.list.forEach((item, index) => {
-        if (item.lastkm === null) {
-          state.list[index].remainkm = parseInt(item.replacekm[0]) - currentkm;
-        } else {
-          state.list[index].remainkm = item.lastkm + parseInt(item.replacekm[0]) - currentkm;
-        }
+        // remainkm 계산
+        const lastkm = item.lastkm !== null ? item.lastkm : 0;
+        const replacekm = parseInt(item.replacekm[0]);
+        state.list[index].remainkm = replacekm - currentkm + lastkm;
 
-        if (item.lasttime === null) {
-          state.list[index].remaintime = parseInt(item.replacetime[0]) - howlife(caryear, state.nowtime);
-        } else {
-          state.list[index].remaintime = item.lasttime + parseInt(item.replacetime[0]) - parseMonth(state.nowtime);
-        }
+        // remaintime 계산
+        const lasttime = item.lasttime !== null ? item.lasttime : 0;
+        const replacetime = parseInt(item.replacetime[0]);
+        state.list[index].remaintime = replacetime - howlife(caryear, state.nowtime) + lasttime;
 
+        // 신호 설정
         if (state.list[index].remainkm <= 0 || state.list[index].remaintime <= 0) {
           state.list[index].signal = 'red';
-        } else if (state.list[index].remainkm <= parseInt(item.replacekm[0]) * 0.33 || state.list[index].remaintime <= parseInt(item.replacetime[0]) * 0.33) {
+        } else if (state.list[index].remainkm <= replacekm * 0.33 || state.list[index].remaintime <= replacetime * 0.33) {
           state.list[index].signal = 'yellow';
         } else {
           state.list[index].signal = 'green';
         }
       });
     },
+
     setOutput: (state, action: PayloadAction<{ currentkm: number }>) => {
       const { currentkm } = action.payload;
       state.list.forEach((data, index) => {
         if (state.R7list[index]) {
-          const tmpkm = (data.remainkm !== null ? data.remainkm : 0) + currentkm;
-          const tmptime = plusmonth(data.remaintime as number, state.nowtime);
-
+          const tmpkm = (typeof data.remainkm === 'number' ? data.remainkm : 0) + (typeof currentkm === 'number' ? currentkm : 0);
+          const tmptime = typeof data.remaintime === 'number' ? plusmonth(data.remaintime, state.nowtime) : state.nowtime;
+    
+          const signal = data.signal === 'red' || data.signal === 'yellow' || data.signal === 'green' ? data.signal : 'red';
+          
           state.R7list[index].signal = data.signal;
-          state.R7list[index].signaltext = Signaltext(data.signal as 'red' | 'yellow' | 'green');
-          state.R7list[index].foreseekm = (tmpkm < currentkm) ? "초과" : tmpkm.toString();
-          state.R7list[index].foreseetime = (tmptime < state.nowtime) ? "초과" : tmptime;
+          state.R7list[index].signaltext = Signaltext(signal);
+          state.R7list[index].foreseekm = isNaN(tmpkm) ? "초과" : (tmpkm < currentkm ? "초과" : tmpkm.toString());
+          state.R7list[index].foreseetime = tmptime ? "초과" : (tmptime < state.nowtime ? "초과" : tmptime);
         }
       });
     }
@@ -197,7 +199,6 @@ function toYear(totalMonths: number): string {
   let year = Math.floor((totalMonths - 1) / 12);
   let month = (totalMonths - 1) % 12 + 1;
 
-  // 숫자를 문자열로 변환한 후 padStart 사용
   const paddedMonth = String(month).padStart(2, "0");
   const paddedYear = String(year).padStart(2, "0");
 

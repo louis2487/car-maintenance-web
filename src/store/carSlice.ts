@@ -7,7 +7,7 @@ interface CarState {
   fuellist: FuelType[];
   brend: string | null;
   model: string | null;
-  fuel: FuelType | null;
+  fuel: string | null;
   year: number;
   mileage: number;
 }
@@ -163,7 +163,7 @@ const carSlice = createSlice({
       state.fuellist = FuelMap[action.payload || ''] || [];
       state.fuel = null;
     },
-    setFuel: (state, action: PayloadAction<FuelType | null>) => {
+    setFuel: (state, action: PayloadAction<string | null>) => {
       state.fuel = action.payload;
     },
     setYear: (state, action: PayloadAction<number>) => {
