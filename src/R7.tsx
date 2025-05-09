@@ -1,7 +1,6 @@
 //결과확인 페이지 - update 0509
 import { useSelector } from 'react-redux'
 import './App.css'
-import { R7Item } from './store/checklistSlice';
 import { RootState } from './store/store';
 interface ChecklistType {
     name: string;
@@ -29,7 +28,9 @@ function Outbox({ label, value}:OutboxType) {
     )
 }
 export default function R7() {
-    const checklist = useSelector((state:RootState) => state.mylist.R7list);
+    const mainlist= useSelector((state: RootState) => state.mylist.list);
+    const checklist = useSelector((state: RootState) => state.mylist.R7list);
+    console.log("list: ", mainlist);
     console.log("R7list: ", checklist);
     return (
         <div>
@@ -46,7 +47,7 @@ export default function R7() {
                     </div>
                     <div className='line'></div>
                 </div>
-            ))};</div>
+            ))}</div>
         </div>
     );
 }

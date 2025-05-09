@@ -10,16 +10,11 @@ interface Car{
 }
 export default function R2C() {
     const [Chevroletcars, SetChevroletcars] = useState<Car[]>([
-        { model_name: 'Aclass', img: '/Chevrolet/Aclass.PNG', select: false },
-        { model_name: 'Bclass', img: '/Chevrolet/Bclass.PNG', select: false },
-        { model_name: 'Cclass', img: '/Chevrolet/Cclass.PNG', select: false },
-        { model_name: 'Eclass', img: '/Chevrolet/Eclass.PNG', select: false },
-        { model_name: 'Sclass', img: '/Chevrolet/Sclass.PNG', select: false },
-        { model_name: 'GLA', img: '/Chevrolet/GLA.PNG', select: false },
-        { model_name: 'GLC', img: '/Chevrolet/GLC.PNG', select: false },
-        { model_name: 'GLE', img: '/Chevrolet/GLE.PNG', select: false },
-        { model_name: 'EQA', img: '/Chevrolet/EQA.PNG', select: false },
-        { model_name: 'EQB', img: '/Chevrolet/EQB.PNG', select: false },
+        { model_name: '말리부', img: '/Chevrolet/말리부.PNG', select: false },
+        { model_name: '볼트', img: '/Chevrolet/볼트.PNG', select: false },
+        { model_name: '스파크', img: '/Chevrolet/스파크.PNG', select: false },
+        { model_name: '트랙스', img: '/Chevrolet/트랙스.PNG', select: false },
+       
     ]);
     const dispatch = useDispatch<AppDispatch>();
     const ImgClick = (clicked_model_name : string) => {
