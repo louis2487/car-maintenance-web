@@ -1,22 +1,24 @@
+//TopBar tyscript update 0512
 import './App.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,NavigateFunction } from "react-router-dom";
 import './Router';
 import { useSelector, useDispatch } from 'react-redux'
-import { setStep } from './store/carSlice.js';
+import { setStep } from './store/carSlice';
+import { AppDispatch, RootState } from './store/store';
 
 function TopBar() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const navigate : NavigateFunction= useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const routing = (path) => {
+  const routing = (path:string) => {
     navigate(path);
   };
-  const test1 = useSelector((state) => state.mycar.step);
-  const test2 = useSelector((state) => state.mycar.brend);
-  const test3 = useSelector((state) => state.mycar.model);
-  const test4 = useSelector((state) => state.mycar.fuel);
-  const test5 = useSelector((state) => state.mycar.year);
-  const test6 = useSelector((state) => state.mycar.mileage);
+  const test1 = useSelector((state: RootState) => state.mycar.step);
+  const test2 = useSelector((state: RootState) => state.mycar.brend);
+  const test3 = useSelector((state: RootState) => state.mycar.model);
+  const test4 = useSelector((state: RootState) => state.mycar.fuel);
+  const test5 = useSelector((state: RootState) => state.mycar.year);
+  const test6 = useSelector((state: RootState) => state.mycar.mileage);
 
   console.log("step:", test1);
   console.log("brend:", test2);
@@ -37,7 +39,7 @@ function TopBar() {
   let home = (
     <button className="home-button" onClick={() => {
       dispatch(setStep(0));
-      routing('./', 0);
+      routing('./');
     }
     }>Home</button>
   );
